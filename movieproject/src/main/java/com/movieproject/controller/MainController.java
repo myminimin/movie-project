@@ -1,58 +1,36 @@
 package com.movieproject.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.movieproject.domain.Criteria;
-import com.movieproject.service.MainService;
-
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/movieproject/*") // localhost/movieproject/
-@AllArgsConstructor
-@Log4j2
 public class MainController {
 
-	private MainService service; // DB와 mapper 연동하여 객체 생성
-	Criteria cri = new Criteria();
-	
-	@GetMapping("/main") // localhost/movieproject/main
-	public void mList(Model model) {
-		
-		log.info("mList");
-		
-		model.addAttribute("Mlist", service.getMlist(cri));
-		
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		/*
+		 * logger.info("Welcome home! The client locale is {}.", locale);
+		 * 
+		 * Date date = new Date(); DateFormat dateFormat =
+		 * DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		 * 
+		 * String formattedDate = dateFormat.format(date);
+		 * 
+		 * model.addAttribute("serverTime", formattedDate );
+		 */
+		return "main";
 	}
 	
 	
-	@GetMapping("/main") // localhost/movieproject/main
-	public void main() {
-		
-		log.info("mList");
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

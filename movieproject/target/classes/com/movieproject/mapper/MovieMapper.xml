@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- xml를 활용한 공통 코드 -->
+<mapper namespace="com.movieproject.mapper.MovieMapper"><!-- 호출 될 메서드의 인터페이스명 일치 -->
+
+	<select id="read" resultType="com.movieproject.domain.MovieVO">
+		select * from movie where movie_id = #{movie_id}
+	</select>
+
+</mapper>

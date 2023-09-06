@@ -17,24 +17,13 @@ import lombok.extern.log4j.Log4j2;
 public class MainServiceImpl implements MainService {
 
 	private MainMapper mapper; // 필드 -> 생성자 자동 구현
-	
+
 	@Override
-	public List<MovieVO> getMlist(Criteria cri){
-		
-		log.info("get List with criteria : " + cri);
-		
-		return mapper.getMlistWithPaging(cri);
-		
+	public List<MovieVO> getMlist(Criteria cri) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
-	/*
-	 * @Override public int getTotal(Criteria cri){
-	 * 
-	 * log.info("get total count");
-	 * 
-	 * return mapper.getTotalCount(cri);
-	 * 
-	 * }
-	 */
+
 	
 }

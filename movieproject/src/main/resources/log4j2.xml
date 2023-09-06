@@ -16,7 +16,7 @@
 	  <Logger name="org.zerock" level="INFO" additivity="false">
 	   <AppenderRef ref="console"/>  
 	  </Logger>
-	  <Logger name="org.springframework" level="DEBUG" additivity="false">
+	  <Logger name="org.springframework" level="INFO" additivity="false">
 	   <AppenderRef ref="console"/>  
 	  </Logger>
 	 </Loggers>
