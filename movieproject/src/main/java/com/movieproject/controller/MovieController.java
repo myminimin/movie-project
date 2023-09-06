@@ -33,7 +33,7 @@ public class MovieController {
 	/*
 	 * @PostMapping("/register") public String register(MovieVO movie,
 	 * RedirectAttributes rttr) {
-	 * - 깃허브 테스트입니다 지워도 상관없습니다
+	 * - 깃허브 테스트입니다 지워도 상관없습니다1
 	 * log.info("register: " + movie);
 	 * 
 	 * service.register(movie);
