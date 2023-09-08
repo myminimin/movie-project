@@ -30,16 +30,5 @@
 </select>
 
 
-	<!-- <select id="read" resultType="com.movieproject.domain.MovieVO">
-		select * from movie where movie_id
-		= #{movie_id}
-	</select> -->
-
-	<select id="getMlist"
-		resultType="com.movieproject.domain.MovieVO"><!-- id=메서드명, resultType=리턴 -->
-		<![CDATA[
-		select * from movie where movie_id > 0
-		]]>
-	</select>
 
 </mapper>

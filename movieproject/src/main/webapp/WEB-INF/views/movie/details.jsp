@@ -85,6 +85,7 @@
 													</c:forEach></li>
 											</ul>
 										</div>
+
 									</div>
 								</div>
 							</c:when>
@@ -104,33 +105,35 @@
 				<div class="section-title">
 					<h5>Reviews</h5>
 				</div>
-				<div class="anime__review__item">
-					<div class="anime__review__item__pic">
-						<img src="/resources/img/anime/review-1.jpg" alt="">
+				<c:forEach var="item" items="${reviews}">
+					<div class="anime__review__item">
+						<div class="anime__review__item__pic">
+							<img src="/resources/img/anime/${item.reviews_id}.jpg" alt="">
+						</div>
+						<div class="anime__review__item__text">
+							<p>
+								<c:out value="${item.reviews_content }" />
+							</p>
+						</div>
 					</div>
-					<div class="anime__review__item__text">
-						<h6>
-							Chris Curry - <span>1 Hour ago</span>
-						</h6>
-						<p>whachikan Just noticed that someone categorized this as
-							belonging to the genre "demons" LOL</p>
+				</c:forEach>
+				<div class="anime__details__form">
+					<div class="section-title">
+						<h5>Your Comment</h5>
 					</div>
+					<form role="form" method="post" action="register">
+						<input type="hidden" name="movie_id" value="${movie[0].movie_id}">
+						<textarea placeholder="Your Comment" name='reviews_content'></textarea>
+						<button type="submit">
+							<i class="fa fa-location-arrow"></i> Review
+						</button>
+					</form>
 				</div>
-			</div>
-			<div class="anime__details__form">
-				<div class="section-title">
-					<h5>Your Comment</h5>
-				</div>
-				<form action="#">
-					<textarea placeholder="Your Comment"></textarea>
-					<button type="submit">
-						<i class="fa fa-location-arrow"></i> Review
-					</button>
-				</form>
 			</div>
 		</div>
-		<!-- sidebar  -->
-		<!--   <div class="col-lg-4 col-md-4">
+	</div>
+	<!-- sidebar  -->
+	<!-- <div class="col-lg-4 col-md-4">
                         <div class="anime__details__sidebar">
                             <div class="section-title">
                                 <h5>you might like...</h5>
@@ -156,9 +159,7 @@
                                 <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                             </div>
                         </div>
-                    </div> -->
-	</div>
-	</div>
+                    </div>  -->
 </section>
 <!-- Anime Section End -->
 

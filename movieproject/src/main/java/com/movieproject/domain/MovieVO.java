@@ -13,10 +13,6 @@ public class MovieVO {
 	private String movie_content;
 	private String movie_relaseyear;
 	
-	private int actor_id;	  // movie_actor
-	private int director_id;  // movie_director
-	private int genre_id;	  // movie_genre
-	
 	private String actor_name;	  // actor
 	private String director_name; // director
 	private String genre;	  	  // genre

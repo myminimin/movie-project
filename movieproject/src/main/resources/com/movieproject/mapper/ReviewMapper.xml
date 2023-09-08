@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- xml를 활용한 공통 코드 -->
+<mapper namespace="com.movieproject.mapper.ReviewMapper"><!-- 호출 될 메서드의 인터페이스명 일치 -->
+
+	<select id="readReview"
+		resultType="com.movieproject.domain.ReviewVO">
+		select * from reviews where movie_id = #{movie_id}
+	</select>
+
+	<insert id="insertReview">
+		insert into reviews (reviews_id, reviews_content, movie_id)
+		values (seq_reviews_id.nextval, #{reviews_content}, #{movie_id})
+	</insert>
+</mapper>
