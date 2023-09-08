@@ -8,6 +8,6 @@ public interface MovieMapper {
 
 	public MovieVO read(int movie_id);
 	
-	public List<MovieVO> getList();
-	
+
+
 }

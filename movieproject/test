@@ -1,0 +1,45 @@
+SELECT g.genre, m.movie_title, a.actor_name, d.director_name
+		FROM movie_genre mg, movie_director md, movie_actor ma
+		JOIN genre g ON mg.genre_id = g.genre_id
+		JOIN movie m ON mg.movie_id = m.movie_id
+		JOIN actor a ON ma.actor_id = a.actor_id
+		JOIN movie m ON ma.movie_id = m.movie_id
+		JOIN director d ON md.director_id = d.director_id
+		JOIN movie m ON md.movie_id = m.movie_id
+		WHERE m.movie_id = 1;
+
+SELECT g.genre, m.movie_title, a.actor_name, d.director_name
+FROM movie_genre mg
+JOIN genre g ON mg.genre_id = g.genre_id
+JOIN movie m ON mg.movie_id = m.movie_id
+JOIN actor a ON ma.actor_id = a.actor_id
+JOIN director d ON md.director_id = d.director_id
+JOIN movie_actor ma ON m.movie_id = ma.movie_id
+JOIN movie_director md ON m.movie_id = md.movie_id
+WHERE m.movie_id = 1;
+
+SELECT g.genre, m.movie_title, a.actor_name, d.director_name
+FROM movie m
+JOIN genre g ON mg.genre_id = g.genre_id
+JOIN actor a ON ma.actor_id = a.actor_id
+JOIN director d ON md.director_id = d.director_id
+JOIN movie_genre mg ON m.movie_id = mg.movie_id
+JOIN movie_actor ma ON m.movie_id = ma.movie_id
+JOIN movie_director md ON m.movie_id = md.movie_id
+WHERE m.movie_id = 1;
+		
+insert into movie_genre (movie_id, genre_id) values (1, 2);
+insert into movie_actor (movie_id, actor_id) values (1, 1);
+insert into movie_actor (movie_id, actor_id) values (1, 2);
+insert into MOVIE_DIRECTOR (movie_id, director_id) values (1, 1);
+
+
+SELECT g.genre, m.movie_title, a.actor_name, d.director_name
+FROM movie m
+JOIN movie_genre mg ON m.movie_id = mg.movie_id
+JOIN genre g ON mg.genre_id = g.genre_id
+JOIN movie_actor ma ON m.movie_id = ma.movie_id
+JOIN actor a ON ma.actor_id = a.actor_id
+JOIN movie_director md ON m.movie_id = md.movie_id
+JOIN director d ON md.director_id = d.director_id
+WHERE m.movie_id = 1;

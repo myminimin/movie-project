@@ -2,50 +2,42 @@ package com.movieproject.domain;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-
-@ToString
-@Setter
-@Getter
+@Data
 public class Criteria {
 
-  private int pageNum;
-  private int amount;
-  
-  private String type;
-  private String keyword;
+	  private int pageNum;
+	  private int amount;
+	  
+	  private String type;
+	  private String keyword;
 
-  public Criteria() {
-    this(1, 5);
-  }
+	  public Criteria() {
+	    this(1, 10);
+	  }
 
-  public Criteria(int pageNum, int amount) {
-    this.pageNum = pageNum;
-    this.amount = amount;
-  }
-  
-  public String[] getTypeArr() {
-    
-    return type == null? new String[] {}: type.split("");
-    
-  }
-  
-  public String getListLink() {
+	  public Criteria(int pageNum, int amount) {
+	    this.pageNum = pageNum;
+	    this.amount = amount;
+	  }
 	  
-	  UriComponentsBuilder builder = UriComponentsBuilder.fromPath("")
-			  .queryParam("pageNum", this.pageNum)
-			  .queryParam("amount", this.getAmount())
-			  .queryParam("type", this.getType())
-			  .queryParam("keyword", this.getKeyword());
+	  public String[] getTypeArr() {
+	    
+	    return type == null? new String[] {}: type.split("");
+	    
+	  }
 	  
-	  return builder.toUriString();
+	  public String getListLink() {
+		  
+		  UriComponentsBuilder builder = UriComponentsBuilder.fromPath("")
+				  .queryParam("pageNum", this.pageNum)
+				  .queryParam("amount", this.getAmount())
+				  .queryParam("type", this.getType())
+				  .queryParam("keyword", this.getKeyword());
+		  
+		  return builder.toUriString();
+		  
+	  }
 	  
-  }
-  
-  
-  
-  
 }

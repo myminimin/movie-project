@@ -1,41 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     </div>
-        <!-- /#page-wrapper -->
+ <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="page-up">
+                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer__logo">
+                            <a href="./index.jsp"><img src="/resources/img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer__nav">
+                            <ul>
+                                <li class="active"><a href="./index.jsp">Homepage</a></li>
+                                <li><a href="./categories.jsp">Categories</a></li>
+                                <li><a href="./blog.jsp">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery 주석처리 -->
-<!--     <script src="/resources/vendor/jquery/jquery.min.js"></script> -->
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/resources/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="/resources/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="/resources/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="/resources/vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/resources/dist/js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-  $(document).ready(function() {
-    $('#dataTables-example').DataTable({
-      responsive: true
-    });
-    $(".sidebar-nav")
-      .attr("class","sidebar-nav navbar-collapse collapse")
-      .attr("aria-expanded",'false')
-      .attr("style","height:1px");
-  });
-</script>
-
-</body>
-
-</html>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <!-- Footer Section End -->

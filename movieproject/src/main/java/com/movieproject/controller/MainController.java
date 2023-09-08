@@ -1,36 +1,36 @@
 package com.movieproject.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.movieproject.service.MainService;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+
 @Controller
+@RequestMapping("/movie/*") 
+@AllArgsConstructor
+@Log4j2
 public class MainController {
 
-	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+	MainService service;
 
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Locale locale, Model model) {
-		/*
-		 * logger.info("Welcome home! The client locale is {}.", locale);
-		 * 
-		 * Date date = new Date(); DateFormat dateFormat =
-		 * DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		 * 
-		 * String formattedDate = dateFormat.format(date);
-		 * 
-		 * model.addAttribute("serverTime", formattedDate );
-		 */
-		return "main";
+	@GetMapping("/index") // localhost/movie/index
+	public void main(Model model) {
+
+		log.info("index페이지 출력");
+		
+		model.addAttribute("mList", service.getMlist());
+		
+		
 	}
-	
-	
 
 }

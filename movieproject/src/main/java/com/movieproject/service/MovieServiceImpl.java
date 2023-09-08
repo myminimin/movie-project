@@ -1,11 +1,16 @@
 package com.movieproject.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.movieproject.domain.Criteria;
+import com.movieproject.domain.MovieDAO;
 import com.movieproject.domain.MovieVO;
+import com.movieproject.mapper.MainMapper;
 import com.movieproject.mapper.MovieMapper;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +23,14 @@ public class MovieServiceImpl implements MovieService {
 	
 	private MovieMapper mapper;
 	
+	private MovieDAO movieDAO;
+	
+	@Autowired
+    public MovieServiceImpl(MovieDAO movieDAO) {
+        this.movieDAO = movieDAO;
+    }
+
+	
 	@Override
 	public MovieVO get(int movie_id) {
 	
@@ -27,9 +40,12 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public List<MovieVO> getList(Criteria cri) {
-		return null;
+	public ArrayList<HashMap<String, Object>> getMovieDetails(int movie_id) {
+		return movieDAO.getMovieDetails(movie_id);
 	}
+
+
+
 
 	
 	

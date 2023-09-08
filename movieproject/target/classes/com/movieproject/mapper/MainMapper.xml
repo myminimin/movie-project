@@ -5,5 +5,11 @@
 <!-- xml를 활용한 공통 코드 -->
 <mapper namespace="com.movieproject.mapper.MainMapper"><!-- 호출 될 메서드의 인터페이스명 일치 -->
 
+<select id="getMlist"
+		resultType="com.movieproject.domain.MovieVO"><!-- id=메서드명, resultType=리턴 -->
+		<![CDATA[
+		select * from movie where movie_id > 0
+		]]>
+	</select>
 
 </mapper>
