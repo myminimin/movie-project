@@ -44,36 +44,32 @@ public class MovieController {
         model.addAttribute("movie", movieDetails);
         model.addAttribute("reviews", serviceReview.getReview(movie_id));
         
-        // JSP 파일의 이름을 반환
-       // return "details"; // "movieDetails"는 JSP 파일의 이름
-		
-	}
-	
-	/*
-	 * @PostMapping("/movie/details") public String insert(ReviewVO review,
-	 * RedirectAttributes rttr, @RequestParam("movie_id") int movie_id) {
-	 * 
-	 * log.info("댓글 작성: " + review);
-	 * 
-	 * serviceReview.insertReview(review);
-	 * 
-	 * rttr.addFlashAttribute("result", review.getReviews_id());
-	 * 
-	 * return "redirect:/movie/details";
-	 * 
-	 * }
-	 */
+	}	// details에 movie_id와 movie_id에 해당하는 reviews들을 model에 담아 보낸다.
 	
 	
 	  @PostMapping("/register") 
 	  public String register(@RequestParam("reviews_content") String reviews_content,
 	  RedirectAttributes rttr, @RequestParam("movie_id") int movie_id) {
 	  
-	  log.info("register : " + reviews_content);
+		  log.info("register : " + reviews_content);
+		  
+		  serviceReview.registerReview(reviews_content, (int) movie_id);
+		  
+		  return "redirect:/movie/details?movie_id=" + movie_id; 
 	  
-	  serviceReview.registerReview(reviews_content, (int) movie_id);
+	  }	// 리뷰 등록
 	  
-	  return "redirect:/movie/details?movie_id=" + movie_id; }
+	  @PostMapping("/remove")
+	  public String remove(@RequestParam("reviews_id") int reviews_id, RedirectAttributes rttr
+			  				, @RequestParam("movie_id") int movie_id) {
+		  
+		  log.info("remove : " + reviews_id);
+		  if(serviceReview.removeReview(reviews_id)) {
+			  rttr.addFlashAttribute("result", "success");
+		  }
+		  
+		  return "redirect:/movie/details?movie_id=" + movie_id;
+	  }
 	 
 	
 

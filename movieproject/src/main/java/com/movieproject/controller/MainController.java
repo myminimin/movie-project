@@ -33,4 +33,13 @@ public class MainController {
 		
 	}
 
+	@GetMapping("/categories") // localhost/movie/index
+	public void categories(Model model) {
+
+		log.info("categories페이지 출력");
+		
+		model.addAttribute("mList", service.getMlist());
+		
+		
+	}
 }

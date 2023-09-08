@@ -20,18 +20,16 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public List<ReviewVO> getReview(int movie_id) {
 		return mapper.readReview(movie_id);
-	}
-
-	@Override
-	public void insertReview(ReviewVO review) {
-		
-		mapper.insertReview(review);
-	}
+	}	// 리뷰 가져오기
 
 	@Override
 	public int registerReview(String reviews_content, int movie_id) {
-		// TODO Auto-generated method stub
 		return mapper.insertReview(reviews_content, movie_id);
-	}
+	}	// 리뷰 등록
+
+	@Override
+	public boolean removeReview(int reviews_id) {
+		return mapper.deleteReview(reviews_id) == 1;
+	}	// 리뷰 삭제 (정상적으로 삭제가 이루어지면 1이라는 값이 반환된다)
 
 }

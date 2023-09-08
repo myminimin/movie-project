@@ -37,7 +37,7 @@
 								<div class="label"></div>
 								<h2>${movie.movie_title}</h2>
 								<p>${movie.movie_content}</p>
-								<a href="#"><span>Watch Now</span> <i
+								<a href='/movie/details?movie_id=<c:out value="${movie.movie_id}"/>'><span>Watch Now</span> <i
 									class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
@@ -168,7 +168,7 @@
 						</c:forEach>
 					</div>
 				</div>
-				<div class="product__sidebar__comment">
+				<%-- <div class="product__sidebar__comment">
 					<div class="section-title">
 						<h5>New Comment</h5>
 					</div>
@@ -191,7 +191,7 @@
 								<span><i class="fa fa-eye"></i> 19.141 Viewes</span>
 							</div>
 					</c:forEach>
-					</div>
+					</div> --%>
 
 
 				</div>

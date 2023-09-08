@@ -5,13 +5,21 @@
 <!-- xml를 활용한 공통 코드 -->
 <mapper namespace="com.movieproject.mapper.ReviewMapper"><!-- 호출 될 메서드의 인터페이스명 일치 -->
 
+	<!-- 리뷰 가져오기 -->
 	<select id="readReview"
 		resultType="com.movieproject.domain.ReviewVO">
 		select * from reviews where movie_id = #{movie_id}
 	</select>
 
+	<!-- 리뷰 추가 -->
 	<insert id="insertReview">
 		insert into reviews (reviews_id, reviews_content, movie_id)
 		values (seq_reviews_id.nextval, #{reviews_content}, #{movie_id})
 	</insert>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="deleteReview">
+		delete from reviews where reviews_id = #{reviews_id}
+	</delete>
+	
 </mapper>
